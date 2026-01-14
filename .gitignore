@@ -1,0 +1,7 @@
+node_modules/
+output/
+outputs/
+*.json
+!package.json
+!tsconfig.json
+dist/
