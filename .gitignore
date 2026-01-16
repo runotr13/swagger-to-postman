@@ -1,7 +1,12 @@
 node_modules/
 output/
 outputs/
-*.json
-!package.json
-!tsconfig.json
 dist/
+
+test-output/
+*.log
+
+!package.json
+!package-lock.json
+!tsconfig.json
+!swagger.json
