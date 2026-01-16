@@ -8,6 +8,7 @@ import { CollectionBuilder } from "./core/CollectionBuilder.js";
 import { EnvironmentBuilder } from "./core/EnvironmentBuilder.js";
 import { SwaggerService } from "./services/SwaggerService.js";
 import { generateMockData } from "./generators/generate-mock-data.js";
+import { syncToPostman } from "./helpers/syncToPostman.js";
 
 const program = new Command();
 
@@ -66,6 +67,8 @@ program
       if (!fs.existsSync(options.output))
         fs.mkdirSync(options.output, { recursive: true });
       colBuilder.saveToFile(`${options.output}/collection.json`);
+      const collectionData = colBuilder.getCollection();
+      await syncToPostman(collectionData);
       envBuilder.saveToFile(`${options.output}/environment.json`);
 
       spinner.succeed(pc.green("Başarıyla tamamlandı!"));

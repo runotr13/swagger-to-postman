@@ -103,4 +103,7 @@ export class CollectionBuilder {
       JSON.stringify(this.collection.toJSON(), null, 2)
     );
   }
+  getCollection() {
+    return this.collection;
+  }
 }

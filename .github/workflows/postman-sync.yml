@@ -1,0 +1,29 @@
+name: Update Postman Collection
+
+on:
+  push:
+    paths:
+      - "swagger.json"
+  workflow_dispatch:
+
+jobs:
+  postman-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Swagger to Postman Sync
+        env:
+          POSTMAN_API_KEY: ${{ secrets.POSTMAN_API_KEY }}
+          COLLECTION_ID: ${{ secrets.COLLECTION_ID }}
+        run: npm run start -- --url ./swagger.json
