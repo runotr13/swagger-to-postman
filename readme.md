@@ -4,7 +4,7 @@
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
 
-Generate dynamic, automated Postman collections and environments directly from your Swagger/OpenAPI documentation. This tool leverages **Faker.js** to populate requests with realistic mock data and follows **SRP (Single Responsibility Principle)** for a robust architecture.
+Generate dynamic, automated Postman collections and environments directly from your Swagger/OpenAPI documentation. This tool leverages **Faker.js** to populate requests with realistic mock data, ensuring a robust and production-ready testing workflow.
 
 ---
 
@@ -57,6 +57,7 @@ gen-postman --url [https://petstore.swagger.io/v2/swagger.json](https://petstore
 
 ## 📖 CLI Arguments
 
-Argument,Shorthand,Description,Default
---url,-u,(Required) Path to local swagger.json or remote URL,N/A
---output,-o,Target directory for generated files,./output
+| Argument   | Shorthand | Description                                             | Default    |
+| :--------- | :-------- | :------------------------------------------------------ | :--------- |
+| `--url`    | `-u`      | **(Required)** Path to local swagger.json or remote URL | N/A        |
+| `--output` | `-o`      | Target directory for generated files                    | `./output` |
