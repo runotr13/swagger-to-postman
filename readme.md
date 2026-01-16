@@ -1,5 +1,5 @@
 # Swagger to Postman (CLI Tool) 🚀
-
+[![Update Postman Collection](https://github.com/runotr13/swagger-to-postman/actions/workflows/postman-sync.yml/badge.svg)](https://github.com/runotr13/swagger-to-postman/actions/workflows/postman-sync.yml)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
