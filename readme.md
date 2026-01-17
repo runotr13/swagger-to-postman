@@ -15,7 +15,6 @@ Generate dynamic, automated Postman collections and environments directly from y
 - **Postman SDK:** Built on top of the official `postman-collection` library.
 - **Environment Automation:** Auto-generates `baseUrl` and security variables (API Key, Bearer Token).
 - **CI/CD Ready:** Built-in support for synchronizing collections directly to Postman Cloud.
-- **Clean Architecture:** Modular code structure for easy maintenance and scalability.
 
 ---
 
@@ -29,7 +28,30 @@ src/
 ├── generators/         # Mock data engine and schema traversal
 ├── helpers/            # Utility functions (e.g., Postman Cloud Sync)
 ├── services/           # Swagger analysis and business logic
-└── index.ts            # CLI Entry point & Command management
+├── cli.ts              # CLI entry point
+└── index.ts            # Public library API
+```
+
+## 📦 npm Usage
+
+### Run without install
+
+```bash
+npx swagger-to-postman -i ./swagger.json
+```
+
+### Global install
+
+```bash
+npm install -g swagger-to-postman
+swagger-to-postman -i ./swagger.json
+```
+
+### Local dependency
+
+```bash
+npm install swagger-to-postman
+npx swagger-to-postman -i ./swagger.json
 ```
 
 ## Build and Link locally:
@@ -42,22 +64,32 @@ npm link
 ## Development
 
 ```bash
-npm run start -- --url ./swagger.json
+npm run start -- -i ./swagger.json -o ./output
 ```
 
 ## Running the Tool
 
 ```bash
 # Using a local file
-gen-postman --url ./swagger.json --output ./test-output
+swagger-to-postman -i ./swagger.json -o ./output
 
 # Using a remote URL
-gen-postman --url [https://petstore.swagger.io/v2/swagger.json](https://petstore.swagger.io/v2/swagger.json) --output ./petstore-output
+swagger-to-postman -i https://petstore.swagger.io/v2/swagger.json -o ./petstore-output
 ```
 
 ## 📖 CLI Arguments
 
 | Argument   | Shorthand | Description                                             | Default    |
 | :--------- | :-------- | :------------------------------------------------------ | :--------- |
-| `--url`    | `-u`      | **(Required)** Path to local swagger.json or remote URL | N/A        |
+| `--input`  | `-i`      | **(Required)** Path to local swagger.json or remote URL | N/A        |
 | `--output` | `-o`      | Target directory for generated files                    | `./output` |
+
+## 📤 Output
+
+The tool generates the following files:
+
+```text
+output/
+├── collection.json     # Postman Collection
+└── environment.json    # Postman Environment
+```

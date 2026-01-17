@@ -4,13 +4,21 @@
   "description": "Generate dynamic Postman collections from Swagger/OpenAPI with Faker.js",
   "type": "module",
   "main": "dist/index.js",
-  "bin": {
-    "gen-postman": "./dist/index.js"
+  "exports": {
+    ".": "./dist/index.js"
   },
+  "bin": {
+    "swagger-to-postman": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "npm run clean && tsc && chmod +x dist/index.js",
-    "start": "npx tsx src/index.ts",
+    "build": "npm run clean && tsc && chmod +x dist/cli.js",
+    "start": "npx tsx src/cli.ts",
     "prepare": "npm run build",
     "prelink": "npm run build"
   },
