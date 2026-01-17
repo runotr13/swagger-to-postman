@@ -1,5 +1,5 @@
 {
-  "name": "swagger-to-postman",
+  "name": "swagger-to-postman-cli",
   "version": "1.0.0",
   "description": "Generate dynamic Postman collections from Swagger/OpenAPI with Faker.js",
   "type": "module",
