@@ -8,7 +8,7 @@
     ".": "./dist/index.js"
   },
   "bin": {
-    "swagger-to-postman": "./dist/cli.js"
+    "swagger-to-postman": "dist/cli.js"
   },
   "files": [
     "dist",
