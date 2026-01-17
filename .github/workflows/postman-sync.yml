@@ -26,4 +26,4 @@ jobs:
         env:
           POSTMAN_API_KEY: ${{ secrets.POSTMAN_API_KEY }}
           COLLECTION_ID: ${{ secrets.COLLECTION_ID }}
-        run: npm run start -- --url ./swagger.json
+        run: npm run start -- --i ./swagger.json
